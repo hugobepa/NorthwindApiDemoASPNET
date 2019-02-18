@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NorthwindApiDemo</name>
+    </assembly>
+    <members>
+        <member name="M:NorthwindApiDemo.Program.Main(System.String[])">
+            Build() :  contruir app
+            Run() : correr app
+        </member>
+        <member name="M:NorthwindApiDemo.Program.CreateWebHostBuilder(System.String[])">
+            WebHost.xxx  podemos configurarlo como queramos. Este es el default que hay de base
+            Startup classe de configuracion de diferentes servicios que crearemos se  llama asi por defecto
+        </member>
+        <member name="M:NorthwindApiDemo.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+             Para llamar los servicios utilizaremos este metodo para llamar al metodo MVC
+            </summary>
+            <param name="services"></param>
+            services.AddMvc();  llamamos los ercicios amc
+        </member>
+        <member name="M:NorthwindApiDemo.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Configuramos entorno y como sale
+            </summary>
+            <param name="app"></param>
+            <param name="env">Aqui llamanos al entorno con el qual trabajamos</param>
+             if (env.IsDevelopment()) aqui chequeamos si el entorno es de desarollo
+             else{ app.UseExceptionHandler(); }si el evento del entono no esta declarado
+             app.UseStatusCodePages();  middleware (tuberia codigo pagina) muy funiconal para errores
+             app.UseMvc();  utilizar el midware MVC
+             
+        </member>
+    </members>
+</doc>
